@@ -1,3 +1,3 @@
 # CRC test program
 ## How to run
-`make`
+Type `make` in the terminal, and it automatically runs the program.
