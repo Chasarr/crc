@@ -1,3 +1,3 @@
 # CRC test program
-##How to run
+## How to run
 `make`
