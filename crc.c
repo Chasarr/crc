@@ -5,7 +5,7 @@
 #define G 0xA7			//generator polynomial
 
 //Function prototypes
-unsigned int crc_gen(uint8_t data, uint8_t crc);
+uint8_t crc_gen(uint8_t data, uint8_t crc);
 uint8_t data = 194;
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
 
 //For generating crc, crc = 0
 //for validating crc, crc =... well, the crc of course!
-unsigned int crc_gen(uint8_t data, uint8_t crc){
+uint8_t crc_gen(uint8_t data, uint8_t crc){
 	// The grade is 8. Register should have 8 bits
 	// msbMask and invertMsbMask to more easily get Msb
 	uint8_t msbMask = 0x80;
