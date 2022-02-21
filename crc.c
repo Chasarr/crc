@@ -3,6 +3,7 @@
 #include <stdint.h>		//uint8_t, included in Arduino library
 #include <stdbool.h>	//1 or 0
 #define G 0xA7			//generator polynomial
+#define REG_SIZE 8		//size of register
 
 //Function prototypes
 uint8_t crc_gen(uint8_t data, uint8_t crc);
@@ -25,11 +26,11 @@ int main() {
 uint8_t crc_gen(uint8_t data, uint8_t crc){
 	// The grade is 8. Register should have 8 bits
 	// msbMask and invertMsbMask to more easily get Msb
-	uint8_t msbMask = 0x80;
+	uint8_t msbMask = 1 << (REG_SIZE - 1);
 	uint8_t invertMsbMask = ~msbMask;
 
 	//Shift through data with a for loop
-	for(unsigned short i = 0; i < 8; i++){
+	for(unsigned short i = 0; i < REG_SIZE; i++){
 		bool crcMsb = (crc & msbMask);
 		if(msbMask & data){
 			//perform XOR performed between data and g
