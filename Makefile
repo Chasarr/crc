@@ -1,5 +1,3 @@
-#GTK_FLAGS = $(shell pkg-config gtk4 --cflags --libs)
-
 SOURCES = crc.c
 PROGRAM_NAME = crc
 CFLAGS ?= -std=c2x -O2 -pedantic -Wextra -march=native
